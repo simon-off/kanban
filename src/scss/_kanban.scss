@@ -1,0 +1,70 @@
+body {
+  color: #222;
+}
+
+.board {
+  --column-width: 300px;
+
+  padding: 16px;
+  display: grid;
+  grid-template-columns:
+    var(--column-width)
+    var(--column-width)
+    var(--column-width)
+    var(--column-width);
+  gap: 8px;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.column {
+  background-color: #f5f5f5;
+  border: 1px solid rgb(165, 167, 180);
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.cards {
+  display: grid;
+  gap: 8px;
+
+  &:hover .card {
+    opacity: 0.75;
+  }
+
+  .card:hover {
+    opacity: 1;
+  }
+}
+
+.card {
+  min-height: calc(var(--column-width) * 0.5);
+  overflow: hidden;
+  border: 1px solid rgb(194, 196, 202);
+  background-color: rgb(255, 254, 253);
+  border-radius: 4px;
+  transition: box-shadow 1000ms ease, opacity 500ms ease;
+
+  &:hover {
+    transition: box-shadow 100ms ease, opacity 100ms ease;
+    box-shadow: 0 0 32px rgba(142, 146, 158, 0.2);
+    z-index: 1;
+    opacity: 1;
+    cursor: grab;
+  }
+
+  header {
+    padding: 6px 8px;
+    border-bottom: 1px solid rgb(194, 196, 202);
+    background-color: #33333308;
+  }
+
+  .body {
+    padding: 6px 8px;
+  }
+
+  h3 {
+    font-weight: 600;
+    font-size: 1rem;
+  }
+}
